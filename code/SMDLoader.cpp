@@ -438,7 +438,7 @@ void SMDImporter::AddBoneChildren(aiNode* pcNode, uint32_t iParent) {
             pc->mTransformation = bone.sAnim.asKeys[0].matrix;
         }
 
-        if (bone.iParent == static_cast<uint32_t>(-1)) { 
+        if (bone.iParent == static_cast<uint32_t>(-1)) {
             bone.mOffsetMatrix = pc->mTransformation;
         } else {
             bone.mOffsetMatrix = asBones[bone.iParent].mOffsetMatrix * pc->mTransformation;
@@ -576,24 +576,24 @@ void SMDImporter::GetAnimationFileList(const std::string &pFile, IOSystem* pIOHa
     char *tok1, *tok2;
     char *context1, *context2;
 
-    tok1 = strtok_s(&buf[0], "\r\n", &context1);
-    while (tok1 != NULL) {
-        tok2 = strtok_s(tok1, " \t", &context2);
-        if (tok2) {
-            char *p = tok2;
-            tok2 = strtok_s(nullptr, " \t", &context2);
-            if (tok2) {
-                animPath = tok2;
-                animName = p;
-            } else  {
-                // No name
-                animPath = p;
-                animName = DefaultIOSystem::completeBaseName(animPath);
-            }
-            outList.push_back(std::make_tuple(animName, base + "/" + animPath));
-        }
-        tok1 = strtok_s(nullptr, "\r\n", &context1);
-    }
+//    tok1 = strtok_s(&buf[0], "\r\n", &context1);
+//    while (tok1 != NULL) {
+//        tok2 = strtok_s(tok1, " \t", &context2);
+//        if (tok2) {
+//            char *p = tok2;
+//            tok2 = strtok_s(nullptr, " \t", &context2);
+//            if (tok2) {
+//                animPath = tok2;
+//                animName = p;
+//            } else  {
+//                // No name
+//                animPath = p;
+//                animName = DefaultIOSystem::completeBaseName(animPath);
+//            }
+//            outList.push_back(std::make_tuple(animName, base + "/" + animPath));
+//        }
+//        tok1 = strtok_s(nullptr, "\r\n", &context1);
+//    }
 }
 
 // ------------------------------------------------------------------------------------------------

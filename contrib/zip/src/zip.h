@@ -27,7 +27,7 @@ extern "C" {
 #ifdef _WIN64
 typedef long long  ssize_t;  /* byte count or error */
 #else
-typedef long  ssize_t;  /* byte count or error */
+typedef int  ssize_t;  /* byte count or error */
 #endif
 #endif
 
