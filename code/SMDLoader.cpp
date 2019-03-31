@@ -549,33 +549,33 @@ void SMDImporter::CreateOutputAnimation(int index, const std::string &name) {
 }
 
 void SMDImporter::GetAnimationFileList(const std::string &pFile, IOSystem* pIOHandler, std::vector<std::tuple<std::string, std::string>>& outList) {
-    auto base = DefaultIOSystem::absolutePath(pFile);
-    auto name = DefaultIOSystem::completeBaseName(pFile);
-    auto path = base + "/" + name + "_animation.txt";
-
-    std::unique_ptr<IOStream> file(pIOHandler->Open(path.c_str(), "rb"));
-    if (file.get() == nullptr) {
-        return;
-    }
-
-    // Allocate storage and copy the contents of the file to a memory buffer
-    std::vector<char> buf;
-    size_t fileSize = file->FileSize();
-    buf.resize(fileSize + 1);
-    TextFileToBuffer(file.get(), buf);
-
-    /*
-        *_animation.txt format:
-        name path
-        idle idle.smd
-        jump anim/jump.smd
-        walk.smd
-        ...
-    */
-    std::string animName, animPath;
-    char *tok1, *tok2;
-    char *context1, *context2;
-
+//    auto base = DefaultIOSystem::absolutePath(pFile);
+//    auto name = DefaultIOSystem::completeBaseName(pFile);
+//    auto path = base + "/" + name + "_animation.txt";
+//
+//    std::unique_ptr<IOStream> file(pIOHandler->Open(path.c_str(), "rb"));
+//    if (file.get() == nullptr) {
+//        return;
+//    }
+//
+//    // Allocate storage and copy the contents of the file to a memory buffer
+//    std::vector<char> buf;
+//    size_t fileSize = file->FileSize();
+//    buf.resize(fileSize + 1);
+//    TextFileToBuffer(file.get(), buf);
+//
+//    /*
+//        *_animation.txt format:
+//        name path
+//        idle idle.smd
+//        jump anim/jump.smd
+//        walk.smd
+//        ...
+//    */
+//    std::string animName, animPath;
+//    char *tok1, *tok2;
+//    char *context1, *context2;
+//
 //    tok1 = strtok_s(&buf[0], "\r\n", &context1);
 //    while (tok1 != NULL) {
 //        tok2 = strtok_s(tok1, " \t", &context2);
