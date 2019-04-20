@@ -1,6 +1,6 @@
 # Open Asset Import Library (assimp)
 # ----------------------------------------------------------------------
-# 
+#
 # Copyright (c) 2006-2019, assimp team
 
 
@@ -101,5 +101,5 @@ ADD_CUSTOM_COMMAND(TARGET assimp_viewer
 TARGET_LINK_LIBRARIES ( assimp_viewer assimp ${DirectX_LIBRARY} ${DirectX_D3DX9_LIBRARY} comctl32.lib winmm.lib )
 
 INSTALL( TARGETS assimp_viewer
-  DESTINATION "${ASSIMP_BIN_INSTALL_DIR}" COMPONENT assimp-dev
+  DESTINATION "${ASSIMP_BIN_INSTALL_DIR}" COMPONENT assimp_dev
 )
